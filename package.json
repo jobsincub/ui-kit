@@ -1,7 +1,7 @@
 {
   "name": "@wandrehappen/ui-kit",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "dev": "storybook dev -p 6006",
+    "version:patch": "npm version patch",
     "build": "vite build && tsc",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
