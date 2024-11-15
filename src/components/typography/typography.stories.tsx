@@ -8,10 +8,32 @@ const meta = {
   argTypes: {
     as: {
       control: { type: 'select' },
-      options: ['span', 'p', 'h1', 'h2', 'h3', 'div'], // Добавьте или измените варианты по необходимости
+      options: ['span', 'p', 'h1', 'h2', 'h3', 'div'],
     },
     children: {
       control: 'text',
+    },
+    className: {
+      control: 'text',
+      description: 'Additional classes for custom styling',
+    },
+    variant: {
+      control: { type: 'select' },
+      options: [
+        'bold14',
+        'bold16',
+        'h1',
+        'h2',
+        'h3',
+        'large',
+        'medium',
+        'regular-link',
+        'regular14',
+        'regular16',
+        'small',
+        'small-link',
+        'small-semi-bold',
+      ],
     },
   },
   component: Typography,
@@ -60,5 +82,23 @@ export const WithRef: Story = {
     }, [])
 
     return <Typography {...args} ref={ref} />
+  },
+}
+
+export const DivWithH1Style: Story = {
+  args: {
+    as: 'div',
+    children: 'Это div стилизованый как h1',
+    variant: 'h1',
+  },
+}
+
+export const Link: Story = {
+  args: {
+    as: 'a',
+    children: 'Это пример ссылки текста.',
+    href: 'https://google.com/',
+    target: '_blank',
+    variant: 'regular-link',
   },
 }
