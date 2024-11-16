@@ -36,7 +36,7 @@ PopoverClose.displayName = PopoverPrimitive.Close.displayName
 const PopoverContent = forwardRef<
   ElementRef<typeof PopoverPrimitive.Content>,
   ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
->(({ align = 'center', className, sideOffset = 4, ...props }, ref) => (
+>(({ align = 'center', className, sideOffset = 1, ...props }, ref) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content
       align={align}
