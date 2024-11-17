@@ -7,7 +7,7 @@ const meta = {
     onClick: { action: 'clicked' },
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'tertiary', 'link'],
+      options: ['primary', 'secondary', 'tertiary', 'link', 'icon'],
     },
   },
   component: Button,
@@ -42,7 +42,7 @@ export const Tertiary: Story = {
 }
 export const Link: Story = {
   args: {
-    children: 'Button that looks like a link',
+    children: 'Button',
     disabled: false,
     variant: 'link',
   },
@@ -66,4 +66,13 @@ export const AsLink: Story = {
     target: '_blank',
     variant: 'primary',
   },
+}
+
+export const Icon: Story = {
+  args: {
+    children:'English',
+    disabled:false,
+    variant:'icon',
+    icon: '🇺🇸'
+  }
 }

@@ -4,9 +4,9 @@
   cursor: pointer;
 
   box-sizing: border-box;
-  padding: 0.5rem 1rem;
-
-  border-radius: 0.25rem;
+  width: 180px;
+  height: 35px;
+  text-align: center;
 
   &:focus-visible {
     outline: 2px solid lightcoral;
@@ -19,26 +19,113 @@
 }
 
 .primary {
-  color: white;
-  background-color: blue;
+  color: var(--color-light-100);
+  background-color: var(--color-primary-500);
+}
+
+.primary:active {
+  color: var(--color-light-500);
+  background-color: var(--color-primary-700);
+}
+
+.primary:hover {
+  color: var(--color-light-100);
+  background-color: var(--color-primary-100);
+  transition: 0.2s ease-in-out;
+}
+
+.primary:focus {
+  border: 2px solid var(--color-primary-700)
+}
+
+.primary:disabled {
+  color: var(--color-light-900);
+  background-color: var(--color-primary-900);
 }
 
 .secondary {
-  color: black;
-  background-color: lightblue;
+  color: var(--color-light-100);
+  background-color: var(--color-dark-300);
+}
+
+.secondary:active {
+  color: var(--color-light-100);
+  background-color: var(--color-dark-500);
+}
+
+.secondary:hover {
+  color: var(--color-light-100);
+  background-color: var(--color-dark-100);
+}
+
+.secondary:focus {
+  border: 2px solid var(--color-primary-300)
+}
+
+.secondary:disabled {
+  color: var(--color-light-900);
+  background-color: var(--color-dark-500);
 }
 
 .tertiary {
-  color: blue;
-  border: 1px solid blue;
+  color: var(--color-primary-500);
+  border: 1px solid var(--color-primary-500);
+}
+
+.tertiary:active {
+  color: var(--color-primary-700);
+  border: 1px solid var(--color-primary-700);
+}
+
+.tertiary:hover {
+  color: var(--color-primary-100);
+  border: 1px solid var(--color-primary-100);
+}
+
+.tertiary:focus {
+  color: var(--color-primary-700);
+  border: 2px solid var(--color-primary-700)
+}
+
+.tertiary:disabled {
+  color: var(--color-primary-900);
+  border: 1px solid var(--color-primary-900)
 }
 
 .link {
-  color: blue;
-  text-decoration: underline;
+  width: 100px;
+  height: 36px;
+  color: var(--color-primary-500);
+  text-decoration: none;
+}
+
+.link:active {
+  color: var(--color-primary-700);
+}
+
+.link:hover {
+  color: var(--color-primary-100);
+}
+
+.link:focus {
+  color: var(--color-primary-500);
+  border:2px solid var(--color-primary-700);
+  border-radius: 2px;
+}
+
+.link:disabled {
+  color: var(--color-primary-900);
 }
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 115px;
+  height: 36px;
+  background-color: var(--color-dark-300);
+  border-radius:2px;
+}
+
+.icon::before {
+  content: attr(data-icon); /* Unicode символ для иконки */
+  margin-right: 8px; /* Отступ между иконкой и текстом */
+  font-size: 1.2em; /* Размер иконки */
 }
