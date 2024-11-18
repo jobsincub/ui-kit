@@ -56,9 +56,11 @@ export const Range: Story = {
     return (
       <>
         <Calendar mode={'range'} onSelect={setDate} selected={date} />
-        {date?.to && date.from
-          ? `${format(date.from, 'dd/MM/yyyy')} - ${format(date.to, 'dd/MM/yyyy')}`
-          : format(new Date(), 'dd/MM/yyyy')}
+        <div style={{ color: 'white' }}>
+          {date?.to && date.from
+            ? `${format(date.from, 'dd/MM/yyyy')} - ${format(date.to, 'dd/MM/yyyy')}`
+            : format(new Date(), 'dd/MM/yyyy')}
+        </div>
       </>
     )
   },
