@@ -1,9 +1,5 @@
 .calendar {
-  width: 100%;
-  max-width: 300px;
-  height: 348px;
-  max-height: 100%;
-
+  display: inline-flex;
   background-color: var(--color-dark-500);
   border: 1px solid var(--color-dark-300);
   border-radius: 2px;
@@ -12,7 +8,7 @@
 .nav {
   position: absolute;
   inset-block-start: 0;
-  inset-inline-end: 0;
+  inset-inline-end: 10px;
 
   display: flex;
   gap: 1px;
@@ -25,12 +21,6 @@
 .button_previous,
 .button_next {
   cursor: pointer;
-
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 
   width: 36px;
   height: 36px;
