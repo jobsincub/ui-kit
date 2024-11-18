@@ -13,9 +13,7 @@ export const DatePicker = (props: DatePickerProps) => {
       <PopoverTrigger>
         <button style={{ color: 'black' }}>{'Pick a date'}</button>
       </PopoverTrigger>
-      <PopoverContent align={'start'} asChild>
-        {/* <span style={{ backgroundColor: 'green', height: '300px', width: '300px' }}> */}
-        {/* </span> */}
+      <PopoverContent align={'start'}>
         <Calendar {...props} />
       </PopoverContent>
     </Popover>
