@@ -1,18 +1,17 @@
-import { useState } from 'react'
+import { type ComponentProps } from 'react'
 import { DayFlag, DayPicker } from 'react-day-picker'
 
 import 'react-day-picker/style.css'
 
 import s from './calendar.module.scss'
 
-export const Calendar = () => {
-  const [selected, setSelected] = useState<Date>()
-
+export type CalendarProps = ComponentProps<typeof DayPicker>
+export const Calendar = (props: CalendarProps) => {
   return (
     <DayPicker
+      {...props}
       className={s.calendar}
       classNames={{
-        [DayFlag.focused]: `${s.focused}`,
         [DayFlag.outside]: `${s.outside}`,
         [DayFlag.today]: `${s.today}`,
         button_next: `${s.button_next}`,
@@ -23,18 +22,20 @@ export const Calendar = () => {
         day_button: `${s.day_button}`,
         month_caption: `${s.month_caption}`,
         nav: `${s.nav}`,
+        range_end: `${s.range_end}`,
+        range_middle: `${s.range_middle}`,
+        range_start: `${s.range_start}`,
         selected: `${s.selected}`,
         weekday: `${s.weekday}`,
         weekdays: `${s.weekdays}`,
       }}
       fixedWeeks
-      mode={'single'}
       modifiers={{
         weekend: { dayOfWeek: [0, 6] },
       }}
-      modifiersClassNames={{ weekend: `${s.weekend}` }}
-      onSelect={setSelected}
-      selected={selected}
+      modifiersClassNames={{
+        weekend: s.weekend,
+      }}
       showOutsideDays
       weekStartsOn={1}
     />
