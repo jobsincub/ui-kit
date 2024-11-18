@@ -7,6 +7,9 @@ import { DatePicker } from '../datePicker'
 const meta: Meta<typeof DatePicker> = {
   argTypes: {},
   component: DatePicker,
+  parameters: {
+    layout: 'centered',
+  },
   tags: ['autodocs'],
   title: 'Components/DatePicker',
 }
