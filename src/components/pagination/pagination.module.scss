@@ -1,70 +1,97 @@
 .wrapper {
-    display: flex;
-    gap: 24px;
-    align-items: center;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  background-color: var(
+    --color-dark-900
+  ); //стоит убрать, так как фон прозрачный, добавила для сторис
+}
+.container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+@mixin item {
+  all: unset;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-light-100);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-s);
+
+  border-radius: 2px;
+}
+
+.item {
+  @include item;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: initial;
+    opacity: 1;
   }
-  .container {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-  
-  @mixin item {
-    all: unset;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    width: 24px;
-    height: 24px;
-  
-    color: var(--color-light-100);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--font-size-s);
-  
-    border-radius: 2px;
-  }
-  
-  .item {
-    @include item;
-    cursor: pointer;
-  
-    &:disabled {
-      cursor: initial;
-      opacity: 1;
-    }
-  
-    &:hover {
-      background-color: var(--color-dark-500);
-    }
-  
-    &.selected {
-      color: var(--color-dark-900);
-      background-color: var(--color-light-100);
-    }
-  
-    &:focus-visible {
-      outline: var(--color-primary-700);
-    }
-  }
-  .dots {
-    @include item;
-  }
-  
-  .selectBox {
-    display: flex;
-    gap: 7px;
-    align-items: center;
-  
-    color: var(--color-light-100);
-    
-  }
-  
-  .select {
-  
+
+  &:hover {
     background-color: var(--color-dark-500);
-    border-radius: 2px;
-    border-color: var(--color-dark-300);
-  
   }
+
+  &.selected {
+    color: var(--color-dark-900);
+    background-color: var(--color-light-100);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-700);
+  }
+}
+.dots {
+  @include item;
+}
+
+.button_previous,
+.button_next {
+  all: unset;
+
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  margin: 4px 0;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  border: none;
+
+  &:disabled {
+    cursor: initial;
+    opacity: 0.3;
+  }
+}
+.button_previous {
+  background-image: url('Left.svg');
+}
+
+.button_next {
+  background-image: url('Right.svg');
+}
+
+.selectBox {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+
+  color: var(--color-light-100);
+}
+
+.select {
+  background-color: var(--color-dark-500);
+  border-radius: 2px;
+  border-color: var(--color-dark-300);
+}

@@ -17,6 +17,8 @@ export type PaginationProps = {
 }
 
 const classNames = {
+  button_next: s.button_next,
+  button_previous: s.button_previous,
   container: s.container,
   dots: s.dots,
   icon: s.icon,
@@ -74,7 +76,6 @@ type NavigationButtonProps = {
 type PageButtonProps = {
   currentPage: number
   selected: boolean
-  //   tabIndex: number
 } & NavigationButtonProps
 
 type MainPaginationButtonProps = {
@@ -93,7 +94,6 @@ const PageButton = ({ currentPage, disabled, onClick, selected }: PageButtonProp
       className={classNames.pageButton(selected)}
       disabled={disabled || selected}
       onClick={onClick}
-      //   tabIndex={tabIndex}
       type={'button'}
     >
       {currentPage}
@@ -102,17 +102,23 @@ const PageButton = ({ currentPage, disabled, onClick, selected }: PageButtonProp
 }
 const PrevButton = ({ disabled, onClick }: NavigationButtonProps) => {
   return (
-    <button className={classNames.item} disabled={disabled} onClick={onClick} type={'button'}>
-      *
-    </button>
+    <button
+      className={classNames.button_previous}
+      disabled={disabled}
+      onClick={onClick}
+      type={'button'}
+    />
   )
 }
 
 const NextButton = ({ disabled, onClick }: NavigationButtonProps) => {
   return (
-    <button className={classNames.item} disabled={disabled} onClick={onClick} type={'button'}>
-      *
-    </button>
+    <button
+      className={classNames.button_next}
+      disabled={disabled}
+      onClick={onClick}
+      type={'button'}
+    />
   )
 }
 
@@ -136,7 +142,6 @@ const MainPaginationButton = ({
             key={index}
             onClick={() => onClick(page)}
             selected={isSelected}
-            // tabIndex={page === currentPage ? 0 : -1}
           />
         )
       })}
@@ -159,7 +164,7 @@ export const PerPageSelect = ({ onPerPageChange, perPage, perPageOptions }: PerP
 
   return (
     <div className={classNames.selectBox}>
-      <span>Показать </span>
+      <span>Show</span>
       <select className={classNames.select} onChange={handleChange} value={perPage}>
         {perPageOptions.map(value => (
           <option key={value} value={value}>
@@ -167,7 +172,7 @@ export const PerPageSelect = ({ onPerPageChange, perPage, perPageOptions }: PerP
           </option>
         ))}
       </select>
-      <span> на странице</span>
+      <span>on page</span>
     </div>
   )
 }
