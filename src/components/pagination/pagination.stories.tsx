@@ -42,7 +42,6 @@ const Template: Story = {
 export const Default: Story = {
   args: {
     ...Template.args,
-    perPage: 10,
     perPageOptions: [10, 20, 30, 50, 100],
   },
   render: Template.render,
@@ -52,7 +51,6 @@ export const Middle: Story = {
   args: {
     ...Template.args,
     currentPage: 7,
-    perPage: 10,
     perPageOptions: [10, 20, 30, 50, 100],
   },
   render: Template.render,
