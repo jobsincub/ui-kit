@@ -1,0 +1,106 @@
+%typography {
+  line-height: var(--line-height-m);
+  color: var(--color-dark-900);
+}
+
+%font-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+%font-semi-bold {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+%font-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+%font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+%size-xs {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-s);
+}
+
+%size-s {
+  font-size: var(--font-size-s);
+}
+
+%size-m {
+  font-size: var(--font-size-m);
+}
+
+%size-l {
+  font-size: var(--font-size-l);
+}
+
+%size-xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-l);
+}
+
+%size-xxl {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-l);
+}
+
+%typography-link {
+  color: var(--color-primary-500);
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+/* Специфичные классы для вариантов */
+.regular14 {
+  @extend %typography, %font-regular, %size-s;
+}
+
+.regular16 {
+  @extend %typography, %font-regular, %size-m;
+}
+
+.large {
+  @extend %typography, %font-semi-bold, %size-xxl;
+}
+
+.h1 {
+  @extend %typography, %font-bold, %size-xl;
+}
+
+.h2 {
+  @extend %typography, %font-bold, %size-l;
+}
+
+.h3 {
+  @extend %typography, %font-semi-bold, %size-m;
+}
+
+.bold14 {
+  @extend %typography, %font-bold, %size-s;
+}
+
+.bold16 {
+  @extend %typography, %font-bold, %size-m;
+}
+
+.medium {
+  @extend %typography, %font-medium, %size-s;
+}
+
+.small {
+  @extend %typography, %font-regular, %size-xs;
+}
+
+.small-semi-bold {
+  @extend %typography, %font-semi-bold, %size-xs;
+}
+
+.regular-link {
+  @extend %typography-link, %font-regular, %size-s;
+}
+
+.small-link {
+  @extend %typography-link, %font-regular, %size-xs;
+}
