@@ -66,6 +66,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.7
         version: 18.2.15
+      '@types/react-google-recaptcha':
+        specifier: ^2.1.9
+        version: 2.1.9
       '@vitejs/plugin-react':
         specifier: ^4.0.3
         version: 4.1.1(vite@4.5.0(@types/node@20.9.0)(sass@1.69.5))
@@ -2022,6 +2025,9 @@ packages:
 
   '@types/react-dom@18.2.15':
     resolution: {integrity: sha512-HWMdW+7r7MR5+PZqJF6YFNSCtjz1T0dsvo/f1BV6HkV+6erD/nA7wd9NM00KVG83zf2nJ7uATPO9ttdIPvi3gg==}
+
+  '@types/react-google-recaptcha@2.1.9':
+    resolution: {integrity: sha512-nT31LrBDuoSZJN4QuwtQSF3O89FVHC4jLhM+NtKEmVF5R1e8OY0Jo4//x2Yapn2aNHguwgX5doAq8Zo+Ehd0ug==}
 
   '@types/react@18.2.37':
     resolution: {integrity: sha512-RGAYMi2bhRgEXT3f4B92WTohopH6bIXw05FuGlmJEnv/omEn190+QYEIYxIAuIBdKgboYYdVved2p1AxZVQnaw==}
@@ -7652,6 +7658,10 @@ snapshots:
   '@types/range-parser@1.2.7': {}
 
   '@types/react-dom@18.2.15':
+    dependencies:
+      '@types/react': 18.2.37
+
+  '@types/react-google-recaptcha@2.1.9':
     dependencies:
       '@types/react': 18.2.37
 
