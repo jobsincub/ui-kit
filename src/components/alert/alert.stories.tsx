@@ -1,14 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type {Meta, StoryObj} from '@storybook/react'
 
-import { Alert } from './'
+import {Alert} from './'
 
 const meta = {
     argTypes: {
-        onClick: { action: 'clicked' },
-        variant: {
-            control: { type: 'radio' },
-            options: ['primary', 'secondary', 'tertiary', 'link'],
-        },
+        type: {
+            options: ['error', 'completed'],
+            control: {type: 'radio'}
+        }
     },
     component: Alert,
     tags: ['autodocs'],
@@ -16,12 +15,18 @@ const meta = {
 } satisfies Meta<typeof Alert>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Alert>
 
-export const Primary: Story = {
+export const Error: Story = {
     args: {
-        children: 'Primary Button',
-        disabled: false,
-        variant: 'primary',
+        type: 'error',
+        message: 'Error! Server is not available',
     },
+}
+
+export const Completed: Story = {
+    args: {
+        type: 'completed',
+        message: 'Your settings are saved',
+    }
 }
