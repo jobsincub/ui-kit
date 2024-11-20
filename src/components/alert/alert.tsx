@@ -20,8 +20,8 @@ export const Alert = ({type, message}:AlertType) => {
                     [s.alert_content_error]: type === 'error',
                     [s.alert_content_completed]: type === 'completed',
                 })}>
-                    <AlertDialog.Description>
-                        {message}
+                    <AlertDialog.Description asChild>
+                        <p className={s.description}>{message}</p>
                     </AlertDialog.Description>
                         <AlertDialog.Action asChild>
                             <button className={s.reset_button}><img src={closeIcon} alt="close"/></button>
