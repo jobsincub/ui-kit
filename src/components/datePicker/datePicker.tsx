@@ -21,11 +21,14 @@ export const DatePicker = (props: DatePickerProps) => {
 
   return (
     <Popover onOpenChange={setActive}>
-      <PopoverTrigger>
-        <button className={className}>
-          <DateFormatter className={s.dateFormatter} date={props.selected} />
-        </button>
-      </PopoverTrigger>
+      <div className={s.wrapper}>
+        <PopoverTrigger>
+          <button className={className}>
+            <DateFormatter className={s.dateFormatter} date={props.selected} />
+          </button>
+        </PopoverTrigger>
+        <span className={s.error}>Как дела!</span>
+      </div>
       <PopoverContent align={'start'}>
         <Calendar {...props} required />
       </PopoverContent>

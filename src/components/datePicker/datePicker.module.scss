@@ -26,7 +26,6 @@
 }
 
 .button_active {
-  //  width: 262px;
   background: var(--dark-500);
   border: 1px solid var(--color-dark-300);
   transition:
@@ -39,4 +38,16 @@
   font-size: 16px;
   line-height: 150%;
   color: var(--color-light-100);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 133%;
+  color: var(--color-danger-500);
 }
