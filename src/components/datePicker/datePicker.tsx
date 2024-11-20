@@ -27,7 +27,10 @@ export const DatePicker = (props: DatePickerProps) => {
             <DateFormatter className={s.dateFormatter} date={props.selected} />
           </button>
         </PopoverTrigger>
-        <span className={s.error}>Как дела!</span>
+        {/* <Typography className={s.error} variant={'small'}> */}
+        {/*   Error, select current month or last month */}
+        {/* </Typography> */}
+        <span className={s.error}>Error, select current month or last month</span>
       </div>
       <PopoverContent align={'start'}>
         <Calendar {...props} required />
