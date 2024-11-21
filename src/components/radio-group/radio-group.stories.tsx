@@ -3,8 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import React from 'react'
 
 import { RadioGroup, RadioGroupIndicator, RadioGroupItem } from './'
-import radioButtonChecked from './assets/icons/radio_button_checked.svg'
-import radioButtonUnchecked from './assets/icons/radio_button_unchecked.svg'
+import { CheckedIcon } from './assets/icons/CheckedIcon'
+import { UncheckedIcon } from './assets/icons/UncheckedIcon'
 
 const meta: Meta<typeof RadioGroup> = {
   component: RadioGroup,
@@ -16,35 +16,33 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => (
-    <RadioGroup defaultValue={'option1'}>
-      <div>
-        <label>
-          <RadioGroupItem value={'option1'}>
-            <img alt={'test'} src={radioButtonUnchecked} />
-            <RadioGroupIndicator>
-              <img alt={'test'} src={radioButtonChecked} />
-            </RadioGroupIndicator>
-          </RadioGroupItem>
-          Option 1
-        </label>
-        <label>
-          <RadioGroupItem value={'option2'}>
-            <img alt={'test'} src={radioButtonUnchecked} />
-            <RadioGroupIndicator>
-              <img alt={'test'} src={radioButtonChecked} />
-            </RadioGroupIndicator>
-          </RadioGroupItem>
-          Option 2
-        </label>
-        <label>
-          <RadioGroupItem value={'option3'}>
-            <img alt={'test'} src={radioButtonUnchecked} />
-            <RadioGroupIndicator>
-              <img alt={'test'} src={radioButtonChecked} />
-            </RadioGroupIndicator>
-          </RadioGroupItem>
-          Option 3
-        </label>
+    <RadioGroup aria-label={'View density'} defaultValue={'default'}>
+      <div style={{ alignItems: 'center', display: 'flex' }}>
+        <RadioGroupItem id={'r1'} value={'default'}>
+          <UncheckedIcon />
+          <RadioGroupIndicator>
+            <CheckedIcon />
+          </RadioGroupIndicator>
+        </RadioGroupItem>
+        <label htmlFor={'r1'}>Default</label>
+      </div>
+      <div style={{ alignItems: 'center', display: 'flex' }}>
+        <RadioGroupItem id={'r2'} value={'comfortable'}>
+          <UncheckedIcon />
+          <RadioGroupIndicator>
+            <CheckedIcon />
+          </RadioGroupIndicator>
+        </RadioGroupItem>
+        <label>Comfortable</label>
+      </div>
+      <div style={{ alignItems: 'center', display: 'flex' }}>
+        <RadioGroupItem id={'r3'} value={'compact'}>
+          <UncheckedIcon />
+          <RadioGroupIndicator>
+            <CheckedIcon />
+          </RadioGroupIndicator>
+        </RadioGroupItem>
+        <label htmlFor={'r3'}>Compact</label>
       </div>
     </RadioGroup>
   ),

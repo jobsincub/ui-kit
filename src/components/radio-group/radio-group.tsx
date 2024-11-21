@@ -1,12 +1,15 @@
 import * as React from 'react'
 
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
+import { clsx } from 'clsx'
+
+import s from './radio-group.module.scss'
 
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
->((props, ref) => {
-  return <RadioGroupPrimitive.Root {...props} ref={ref} />
+>(({ className, ...props }, ref) => {
+  return <RadioGroupPrimitive.Root className={clsx(s.root, className)} {...props} ref={ref} />
 })
 
 RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
@@ -14,8 +17,8 @@ RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 const RadioGroupItem = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
->((props, ref) => {
-  return <RadioGroupPrimitive.Item ref={ref} {...props} />
+>(({ className, ...props }, ref) => {
+  return <RadioGroupPrimitive.Item className={clsx(s.item, className)} ref={ref} {...props} />
 })
 
 RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
@@ -23,8 +26,10 @@ RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 const RadioGroupIndicator = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Indicator>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Indicator>
->((props, ref) => {
-  return <RadioGroupPrimitive.Indicator ref={ref} {...props} />
+>(({ className, ...props }, ref) => {
+  return (
+    <RadioGroupPrimitive.Indicator className={clsx(s.indicator, className)} ref={ref} {...props} />
+  )
 })
 
 RadioGroupIndicator.displayName = RadioGroupPrimitive.Indicator.displayName
