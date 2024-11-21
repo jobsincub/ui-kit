@@ -35,7 +35,7 @@
 }
 
 .primary:focus {
-  border: 2px solid var(--color-primary-700)
+  border: 2px solid var(--color-primary-700);
 }
 
 .primary:disabled {
@@ -59,7 +59,7 @@
 }
 
 .secondary:focus {
-  border: 2px solid var(--color-primary-300)
+  border: 2px solid var(--color-primary-300);
 }
 
 .secondary:disabled {
@@ -84,12 +84,12 @@
 
 .tertiary:focus {
   color: var(--color-primary-700);
-  border: 2px solid var(--color-primary-700)
+  border: 2px solid var(--color-primary-700);
 }
 
 .tertiary:disabled {
   color: var(--color-primary-900);
-  border: 1px solid var(--color-primary-900)
+  border: 1px solid var(--color-primary-900);
 }
 
 .link {
@@ -109,7 +109,7 @@
 
 .link:focus {
   color: var(--color-primary-500);
-  border:2px solid var(--color-primary-700);
+  border: 2px solid var(--color-primary-700);
   border-radius: 2px;
 }
 
@@ -121,7 +121,7 @@
   width: 115px;
   height: 36px;
   background-color: var(--color-dark-300);
-  border-radius:2px;
+  border-radius: 2px;
 }
 
 .icon::before {

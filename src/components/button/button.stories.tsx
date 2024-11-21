@@ -70,9 +70,9 @@ export const AsLink: Story = {
 
 export const Icon: Story = {
   args: {
-    children:'English',
-    disabled:false,
-    variant:'icon',
-    icon: '🇺🇸'
-  }
+    children: 'English',
+    disabled: false,
+    icon: '🇺🇸',
+    variant: 'icon',
+  },
 }
