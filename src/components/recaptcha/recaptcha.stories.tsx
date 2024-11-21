@@ -1,27 +1,26 @@
-// import { FormEvent, useState } from 'react'
-import RecaptchaComponent from 'react-google-recaptcha'
-
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Recaptcha } from './recaptcha'
+import { ReCaptcha } from './recaptcha'
 
 const meta = {
-  component: Recaptcha,
+  component: ReCaptcha,
   tags: ['autodocs'],
-  title: 'components/Recaptcha',
-} satisfies Meta<typeof Recaptcha>
+  title: 'Components/Recaptcha',
+} satisfies Meta<typeof ReCaptcha>
 
 export default meta
-type Story = StoryObj<typeof Recaptcha>
+type Story = StoryObj<typeof ReCaptcha>
 
 export const Default: Story = {
   args: {
-    children: (
-      <RecaptchaComponent
-        hl={'en'}
-        sitekey={'6LcrEYQqAAAAAH39ZWiTbCHde_Z_-83OBxIXB7l8'}
-        theme={'dark'}
-      />
-    ),
+    onChange: token => console.log('Verified:', token),
+    sitekey: '6LcrEYQqAAAAAH39ZWiTbCHde_Z_-83OBxIXB7l8', // тестовый ключ
+  },
+}
+export const RecaptchaWithError: Story = {
+  args: {
+    isError: true,
+    onChange: token => console.log('Verified:', token),
+    sitekey: '6LcrEYQqAAAAAH39ZWiTbCHde_Z_-83OBxIXB7l8', // тестовый ключ
   },
 }
