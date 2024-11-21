@@ -1,42 +1,32 @@
-import React from 'react'
+import * as React from 'react'
 
-import * as RadioGroup from '@radix-ui/react-radio-group'
+import * as RadioGroupPrimitive from '@radix-ui/react-radio-group'
 
-import s from './radio-group.module.scss'
+const RadioGroup = React.forwardRef<
+  React.ElementRef<typeof RadioGroupPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
+>((props, ref) => {
+  return <RadioGroupPrimitive.Root {...props} ref={ref} />
+})
 
-export type RadioGroupDemoProps = {
-  defaultValue?: string
-}
+RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 
-const RadioGroupDemo: React.FC<RadioGroupDemoProps> = ({ defaultValue }) => (
-  <form>
-    <RadioGroup.Root aria-label={'View density'} className={s.Root} defaultValue={defaultValue}>
-      <div style={{ alignItems: 'center', display: 'flex' }}>
-        <RadioGroup.Item className={s.Item} id={'r1'} value={'default'}>
-          <RadioGroup.Indicator className={s.Indicator} />
-        </RadioGroup.Item>
-        <label className={s.Label} htmlFor={'r1'}>
-          Default
-        </label>
-      </div>
-      <div style={{ alignItems: 'center', display: 'flex' }}>
-        <RadioGroup.Item className={s.Item} id={'r2'} value={'comfortable'}>
-          <RadioGroup.Indicator className={s.Indicator} />
-        </RadioGroup.Item>
-        <label className={s.Label} htmlFor={'r2'}>
-          Comfortable
-        </label>
-      </div>
-      <div style={{ alignItems: 'center', display: 'flex' }}>
-        <RadioGroup.Item className={s.Item} id={'r3'} value={'compact'}>
-          <RadioGroup.Indicator className={s.Indicator} />
-        </RadioGroup.Item>
-        <label className={s.Label} htmlFor={'r3'}>
-          Compact
-        </label>
-      </div>
-    </RadioGroup.Root>
-  </form>
-)
+const RadioGroupItem = React.forwardRef<
+  React.ElementRef<typeof RadioGroupPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
+>((props, ref) => {
+  return <RadioGroupPrimitive.Item ref={ref} {...props} />
+})
 
-export default RadioGroupDemo
+RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
+
+const RadioGroupIndicator = React.forwardRef<
+  React.ElementRef<typeof RadioGroupPrimitive.Indicator>,
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Indicator>
+>((props, ref) => {
+  return <RadioGroupPrimitive.Indicator ref={ref} {...props} />
+})
+
+RadioGroupIndicator.displayName = RadioGroupPrimitive.Indicator.displayName
+
+export { RadioGroup, RadioGroupIndicator, RadioGroupItem }
