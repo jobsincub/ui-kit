@@ -7,9 +7,12 @@ import s from './dateFormatter.module.scss'
 import { CalendarIcon } from '../date'
 import { formatter } from './utils'
 
-type DateFormatterProps = { date: Date | DateRange | undefined } & ComponentPropsWithoutRef<'span'>
+type DateFormatterProps = {
+  date: Date | DateRange | undefined
+  error: boolean
+} & ComponentPropsWithoutRef<'span'>
 
-export const DateFormatter = ({ date, ...restProps }: DateFormatterProps) => {
+export const DateFormatter = ({ date, error, ...restProps }: DateFormatterProps) => {
   const render = () => {
     if (!date) {
       return <span {...restProps}>Pick a date</span>
@@ -35,9 +38,9 @@ export const DateFormatter = ({ date, ...restProps }: DateFormatterProps) => {
   }
 
   return (
-    <span className={s.wrapper}>
+    <span className={`${s.wrapper} ${error ? s.error : ''}`}>
       {render()}
-      <CalendarIcon />
+      <CalendarIcon error={error} />
     </span>
   )
 }

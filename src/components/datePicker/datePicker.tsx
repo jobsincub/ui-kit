@@ -7,6 +7,7 @@ import s from './datePicker.module.scss'
 import { Calendar } from '../calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '../popover'
 import { DateFormatter } from './date'
+import { ErrorMessage } from './erorrMessage'
 
 type DatePickerProps =
   | Pick<PropsRangeRequired, 'mode' | 'onSelect' | 'selected'>
@@ -14,26 +15,49 @@ type DatePickerProps =
 
 export const DatePicker = (props: DatePickerProps) => {
   const [active, setActive] = useState(false)
+  const [error, setError] = useState(false)
 
   const className = `${s.button} ${active ? s.button_active : ''} ${
     props.mode === 'single' ? s.single : s.range
-  }`
+  } ${error && s.button_error}`
+
+  const selectHandler = (selectedDate: Date) => {
+    if (!selectedDate) {
+      return
+    }
+
+    const today = new Date()
+    const currentMonth = today.getMonth()
+    const previousMonth = currentMonth === 0 ? 11 : currentMonth - 1
+    const selectedMonth = selectedDate.getMonth()
+    const selectedYear = selectedDate.getFullYear()
+
+    if (
+      selectedYear !== today.getFullYear() &&
+      !(selectedYear === today.getFullYear() - 1 && selectedMonth === 11)
+    ) {
+      setError(true)
+
+      return
+    }
+
+    if (selectedMonth !== currentMonth && selectedMonth !== previousMonth) {
+      setError(true)
+    } else {
+      setError(false)
+    }
+  }
 
   return (
     <Popover onOpenChange={setActive}>
       <div className={s.wrapper}>
-        <PopoverTrigger>
-          <button className={className}>
-            <DateFormatter className={s.dateFormatter} date={props.selected} />
-          </button>
+        <PopoverTrigger asChild={false} className={className}>
+          <DateFormatter className={s.dateFormatter} date={props.selected} error={error} />
         </PopoverTrigger>
-        {/* <Typography className={s.error} variant={'small'}> */}
-        {/*   Error, select current month or last month */}
-        {/* </Typography> */}
-        <span className={s.error}>Error, select current month or last month</span>
+        {error && <ErrorMessage mode={props.mode} />}
       </div>
       <PopoverContent align={'start'}>
-        <Calendar {...props} required />
+        <Calendar onDayClick={selectHandler} {...props} required />
       </PopoverContent>
     </Popover>
   )

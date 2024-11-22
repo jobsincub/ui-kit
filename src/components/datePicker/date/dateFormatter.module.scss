@@ -1,7 +1,6 @@
 .wrapper {
   display: flex;
-
-  //  gap: 24px;
+  gap: 24px;
   align-items: center;
   justify-content: space-between;
 }
@@ -26,4 +25,8 @@
   padding: 0;
 
   font-family: inherit;
+}
+
+.error {
+  color: var(--color-danger-500);
 }
