@@ -13,9 +13,9 @@ const meta = {
     children: {
       control: 'text',
     },
-    className: {
-      control: 'text',
-      description: 'Additional classes for custom styling',
+    color: {
+      control: { type: 'select' },
+      options: ['accent', 'danger', 'dark', 'light', 'success', 'warning'],
     },
     variant: {
       control: { type: 'select' },
@@ -100,5 +100,12 @@ export const Link: Story = {
     href: 'https://google.com/',
     target: '_blank',
     variant: 'regular-link',
+  },
+}
+
+export const WithColor: Story = {
+  args: {
+    children: 'Пример текста c цветом',
+    color: 'success',
   },
 }
