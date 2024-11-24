@@ -5,6 +5,9 @@ import { clsx } from 'clsx'
 
 import s from './radio-group.module.scss'
 
+import { CheckedIcon } from './assets/icons/CheckedIcon'
+import { UncheckedIcon } from './assets/icons/UncheckedIcon'
+
 const RadioGroup = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>
@@ -16,22 +19,31 @@ RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 
 const RadioGroupItem = React.forwardRef<
   React.ElementRef<typeof RadioGroupPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>
->(({ className, ...props }, ref) => {
-  return <RadioGroupPrimitive.Item className={clsx(s.item, className)} ref={ref} {...props} />
+  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item> & {
+    htmlFor?: string
+    label: string
+  }
+>(({ className, disabled, htmlFor, label, ...props }, ref) => {
+  return (
+    <>
+      <RadioGroupPrimitive.Item
+        className={clsx(s.item, className)}
+        disabled={disabled}
+        ref={ref}
+        {...props}
+      >
+        <UncheckedIcon />
+        <RadioGroupPrimitive.Indicator className={s.indicator}>
+          <CheckedIcon />
+        </RadioGroupPrimitive.Indicator>
+      </RadioGroupPrimitive.Item>
+      <label className={s.label} htmlFor={htmlFor}>
+        {label}
+      </label>
+    </>
+  )
 })
 
 RadioGroupItem.displayName = RadioGroupPrimitive.Item.displayName
 
-const RadioGroupIndicator = React.forwardRef<
-  React.ElementRef<typeof RadioGroupPrimitive.Indicator>,
-  React.ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Indicator>
->(({ className, ...props }, ref) => {
-  return (
-    <RadioGroupPrimitive.Indicator className={clsx(s.indicator, className)} ref={ref} {...props} />
-  )
-})
-
-RadioGroupIndicator.displayName = RadioGroupPrimitive.Indicator.displayName
-
-export { RadioGroup, RadioGroupIndicator, RadioGroupItem }
+export { RadioGroup, RadioGroupItem }
