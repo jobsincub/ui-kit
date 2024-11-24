@@ -12,13 +12,18 @@
   height: 36px;
   margin-right: 2px;
 
-  border-radius: 100%;
+  border-radius: 50%;
 
-  & > svg {
+  & svg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    path {
+      color: currentcolor;
+      fill: currentcolor;
+    }
   }
 
   &:active {
@@ -34,12 +39,8 @@
   }
 
   &:disabled {
-    svg path {
+    & svg path {
       fill: var(--color-dark-100);
-    }
-
-    & ~ label {
-      color: var(--color-light-900);
     }
   }
 }
@@ -49,11 +50,15 @@
   display: block;
   width: 100%;
   height: 100%;
+}
 
-  & > svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.label {
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-m);
+  color: var(--color-light-100);
+
+  .item:disabled ~ & {
+    color: var(--color-light-900);
   }
 }
