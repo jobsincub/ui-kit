@@ -1,21 +1,23 @@
-import type { DateRange } from 'react-day-picker'
-
 import { format } from 'date-fns'
 
-export const checkDate = (date: Date | DateRange | undefined) => {
-  if (!date) {
+export const validateDate = (selectedDate: Date) => {
+  if (!selectedDate) {
     return false
   }
 
-  if (date instanceof Date) {
-    return !isNaN(date.getTime())
-  }
+  const today = new Date()
+  const currentMonth = today.getMonth()
+  const previousMonth = currentMonth === 0 ? 11 : currentMonth - 1
+  const selectedMonth = selectedDate.getMonth()
+  const selectedYear = selectedDate.getFullYear()
 
-  if ('from' in date || 'to' in date) {
-    return Boolean(date.from || date.to)
-  }
+  const isSameOrPreviousYear =
+    selectedYear === today.getFullYear() ||
+    (selectedYear === today.getFullYear() - 1 && selectedMonth === 11)
 
-  return false
+  const isValidMonth = selectedMonth === currentMonth || selectedMonth === previousMonth
+
+  return isSameOrPreviousYear && isValidMonth
 }
 
 export const formatter = (date: Date) => {

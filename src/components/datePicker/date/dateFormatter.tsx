@@ -2,6 +2,8 @@ import type { DateRange } from 'react-day-picker'
 
 import type { ComponentPropsWithoutRef } from 'react'
 
+import { clsx } from 'clsx'
+
 import s from './dateFormatter.module.scss'
 
 import { CalendarIcon } from '../date'
@@ -9,10 +11,16 @@ import { formatter } from './utils'
 
 type DateFormatterProps = {
   date: Date | DateRange | undefined
+  disabled?: boolean
   error: boolean
 } & ComponentPropsWithoutRef<'span'>
 
-export const DateFormatter = ({ date, error, ...restProps }: DateFormatterProps) => {
+export const DateFormatter = ({
+  date,
+  disabled = false,
+  error = false,
+  ...restProps
+}: DateFormatterProps) => {
   const render = () => {
     if (!date) {
       return <span {...restProps}>Pick a date</span>
@@ -38,7 +46,7 @@ export const DateFormatter = ({ date, error, ...restProps }: DateFormatterProps)
   }
 
   return (
-    <span className={`${s.wrapper} ${error ? s.error : ''}`}>
+    <span {...restProps} className={clsx(s.wrapper, { [s.disabled]: disabled, [s.error]: error })}>
       {render()}
       <CalendarIcon error={error} />
     </span>

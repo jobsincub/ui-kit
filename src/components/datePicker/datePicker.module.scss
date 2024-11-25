@@ -1,4 +1,6 @@
 .button {
+  cursor: pointer;
+
   position: relative;
 
   height: 36px;
@@ -14,8 +16,13 @@
     border-color 0.3s ease;
 
   &:focus {
+    background-color: var(--color-dark-500);
     outline: 2px solid var(--color-primary-700);
   }
+}
+
+.button_disabled {
+  background-color: var(--color-dark-500);
 }
 
 .single {
