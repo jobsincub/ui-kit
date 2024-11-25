@@ -104,7 +104,7 @@ export const Controlled: Story = {
         label={`Current option value: ${current || 'none'}`}
         onValueChange={handleChangeCurrentOption}
         options={args.options}
-        placeholder="Select controlled value"
+        placeholder={'Select controlled value'}
       />
     )
   },
