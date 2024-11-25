@@ -37,13 +37,11 @@ export const Range: Story = {
   },
 }
 
-// export const WithState: Story = {
-//   args: {},
-//   render: () => {
-//     const handler = (date: Date) => {
-//       alert('Успех, вторая дата')
-//     }
-//
-//     return <Test mode={'single'} onDateSelect={handler} />
-//   },
-// }
+export const Disabled: Story = {
+  args: {},
+  render: () => {
+    const [date, setDate] = useState<Date>(new Date())
+
+    return <DatePicker disabled mode={'single'} onSelect={setDate} selected={date} />
+  },
+}
