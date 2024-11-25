@@ -22,6 +22,7 @@
 }
 
 .button_disabled {
+  cursor: default;
   background-color: var(--color-dark-500);
 }
 

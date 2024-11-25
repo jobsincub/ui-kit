@@ -34,7 +34,7 @@ export const DatePicker = ({ disabled = false, ...props }: DatePickerProps) => {
   return (
     <Popover onOpenChange={setActive}>
       <div className={s.wrapper}>
-        <PopoverTrigger asChild={false} className={className}>
+        <PopoverTrigger asChild={false} className={className} disabled={disabled}>
           <DateFormatter
             className={s.dateFormatter}
             date={props.selected}
