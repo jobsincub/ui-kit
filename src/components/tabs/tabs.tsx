@@ -1,12 +1,11 @@
 import { type ComponentPropsWithoutRef, type ElementRef, forwardRef } from 'react'
 
 import * as TabsPrimitive from '@radix-ui/react-tabs'
+import { clsx } from 'clsx'
 
 import s from './tabs.module.scss'
 
 export const tabsVariant = ['primary', 'secondary'] as const
-
-export type TabsVariant = (typeof tabsVariant)[number]
 
 const TabsRoot = forwardRef<
   ElementRef<typeof TabsPrimitive.Root>,
@@ -38,7 +37,7 @@ const TabsTrigger = forwardRef<
 >(({ asChild = false, className = 'primary', disabled = false, value, ...props }, ref) => (
   <TabsPrimitive.Trigger
     asChild={asChild}
-    className={s[className] + ' ' + s.Trigger}
+    className={clsx(s[className], s.Trigger)}
     disabled={disabled}
     ref={ref}
     value={value}
