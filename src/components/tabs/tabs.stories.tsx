@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import * as Tabs from './'
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from './'
 
-const meta: Meta<typeof Tabs.Trigger> = {
+const meta: Meta<typeof TabsTrigger> = {
   argTypes: {
     asChild: {
       control: {
@@ -23,7 +23,7 @@ const meta: Meta<typeof Tabs.Trigger> = {
       description: 'Tab disabled.',
     },
   },
-  component: Tabs.Trigger,
+  component: TabsTrigger,
   parameters: {
     layout: 'centered',
   },
@@ -41,21 +41,21 @@ export const Default: Story = {
     disabled: false,
   },
   render: args => (
-    <Tabs.Root defaultValue={'tab1'}>
-      <Tabs.List aria-label={'tabs example'}>
-        <Tabs.Trigger {...args} value={'tab1'}>
+    <TabsRoot defaultValue={'tab1'}>
+      <TabsList aria-label={'tabs example'}>
+        <TabsTrigger {...args} value={'tab1'}>
           One
-        </Tabs.Trigger>
-        <Tabs.Trigger {...args} value={'tab2'}>
+        </TabsTrigger>
+        <TabsTrigger {...args} value={'tab2'}>
           Two
-        </Tabs.Trigger>
-        <Tabs.Trigger {...args} value={'tab3'}>
+        </TabsTrigger>
+        <TabsTrigger {...args} value={'tab3'}>
           Three
-        </Tabs.Trigger>
-      </Tabs.List>
-      <Tabs.Content value={'tab1'}>Tab one content</Tabs.Content>
-      <Tabs.Content value={'tab2'}>Tab two content</Tabs.Content>
-      <Tabs.Content value={'tab3'}>Tab three content</Tabs.Content>
-    </Tabs.Root>
+        </TabsTrigger>
+      </TabsList>
+      <TabsContent value={'tab1'}>Tab one content</TabsContent>
+      <TabsContent value={'tab2'}>Tab two content</TabsContent>
+      <TabsContent value={'tab3'}>Tab three content</TabsContent>
+    </TabsRoot>
   ),
 }

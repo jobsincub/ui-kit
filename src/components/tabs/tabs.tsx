@@ -8,7 +8,7 @@ export const tabsVariant = ['primary', 'secondary'] as const
 
 export type TabsVariant = (typeof tabsVariant)[number]
 
-const Root = forwardRef<
+const TabsRoot = forwardRef<
   ElementRef<typeof TabsPrimitive.Root>,
   ComponentPropsWithoutRef<typeof TabsPrimitive.Root>
 >(({ asChild = false, defaultValue, ...props }, ref) => (
@@ -21,18 +21,18 @@ const Root = forwardRef<
   />
 ))
 
-Root.displayName = TabsPrimitive.Root.displayName
+TabsRoot.displayName = TabsPrimitive.Root.displayName
 
-const List = forwardRef<
+const TabsList = forwardRef<
   ElementRef<typeof TabsPrimitive.List>,
   ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 >(({ asChild = false, ...props }, ref) => (
   <TabsPrimitive.List asChild={asChild} className={s.List} ref={ref} {...props} />
 ))
 
-List.displayName = TabsPrimitive.List.displayName
+TabsList.displayName = TabsPrimitive.List.displayName
 
-const Trigger = forwardRef<
+const TabsTrigger = forwardRef<
   HTMLButtonElement,
   ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
 >(({ asChild = false, className = 'primary', disabled = false, value, ...props }, ref) => (
@@ -46,9 +46,9 @@ const Trigger = forwardRef<
   />
 ))
 
-Trigger.displayName = TabsPrimitive.Trigger.displayName
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 
-const Content = forwardRef<
+const TabsContent = forwardRef<
   ElementRef<typeof TabsPrimitive.Content>,
   ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
 >(({ asChild = false, value, ...props }, ref) => (
@@ -61,6 +61,6 @@ const Content = forwardRef<
   />
 ))
 
-Content.displayName = TabsPrimitive.Content.displayName
+TabsContent.displayName = TabsPrimitive.Content.displayName
 
-export { Content, List, Root, Trigger }
+export { TabsContent, TabsList, TabsRoot, TabsTrigger }
