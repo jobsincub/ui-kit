@@ -4,10 +4,20 @@ import { clsx } from 'clsx'
 
 import s from './input.module.scss'
 
-export const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
-  ({ className, ...props }, ref) => {
-    const classNames = clsx(s.input, className)
+export type InputProps = React.ComponentProps<'input'> & {
+  error?: string
+  label?: string
+}
 
-    return <input className={classNames} ref={ref} {...props} />
-  }
-)
+export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const { className, error, id, label, ...rest } = props
+  const classNames = clsx(s.input, className)
+
+  return (
+    <div>
+      {label && <label htmlFor={id}>{label}</label>}
+      <input className={classNames} ref={ref} {...rest} />
+      {error && <span>{error}</span>}
+    </div>
+  )
+})
