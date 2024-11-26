@@ -104,3 +104,28 @@
 .small-link {
   @extend %typography-link, %font-regular, %size-xs;
 }
+
+/* Специфичные классы для цветов */
+.accent {
+  color: var(--color-primary-500);
+}
+
+.success {
+  color: var(--color-success-500);
+}
+
+.danger {
+  color: var(--color-danger-500);
+}
+
+.warning {
+  color: var(--color-warning-500);
+}
+
+.dark {
+  color: var(--color-dark-500);
+}
+
+.light {
+  color: var(--color-light-500);
+}
