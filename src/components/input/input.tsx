@@ -24,7 +24,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         </label>
       )}
       <div>
-        {isSearchType && <SearchIcon />}
+        {isSearchType && <SearchIcon className={s.searchIcon} />}
         <input className={classNames} id={id} ref={ref} type={type} {...rest} />
       </div>
       {error && <span className={s.errorText}>{error}</span>}

@@ -25,3 +25,19 @@
   line-height: var(--line-height-m);
   color: var(--color-danger-500);
 }
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+
+  width: 20px;
+  height: 20px;
+
+  color: var(--color-light-900);
+
+  & ~ .input {
+    padding-left: 41px;
+  }
+}
