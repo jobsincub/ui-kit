@@ -18,7 +18,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const classNames = clsx(s.input, error && s.inputError, className)
   const isSearchType = type === 'search'
   const isPasswordType = type === 'password'
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+  const [isPasswordVisible, setIsPasswordVisible] = useState(true)
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(prev => !prev)
