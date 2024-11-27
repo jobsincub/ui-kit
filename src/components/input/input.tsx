@@ -14,8 +14,8 @@ export type InputProps = React.ComponentProps<'input'> & {
 }
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { className, error, id, label, type, ...rest } = props
-  const classNames = clsx(s.input, className)
+  const { className, disabled, error, id, label, type, ...rest } = props
+  const classNames = clsx(s.input, error && s.inputError, className)
   const isSearchType = type === 'search'
   const isPasswordType = type === 'password'
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
@@ -25,7 +25,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   }
 
   return (
-    <div className={s.wrapper}>
+    <div className={clsx(s.wrapper, disabled && s.disabled)}>
       {label && (
         <label className={s.label} htmlFor={id}>
           {label}
@@ -35,6 +35,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
         {isSearchType && <SearchIcon className={s.searchIcon} />}
         <input
           className={classNames}
+          disabled={disabled}
           id={id}
           ref={ref}
           type={isPasswordType && isPasswordVisible ? 'text' : type}
