@@ -17,13 +17,13 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const isSearchType = type === 'search'
 
   return (
-    <div>
+    <div className={s.wrapper}>
       {label && (
         <label className={s.label} htmlFor={id}>
           {label}
         </label>
       )}
-      <div>
+      <div className={s.inputWrapper}>
         {isSearchType && <SearchIcon className={s.searchIcon} />}
         <input className={classNames} id={id} ref={ref} type={type} {...rest} />
       </div>
