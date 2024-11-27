@@ -50,3 +50,19 @@
     padding-left: 41px;
   }
 }
+
+.eyeButton {
+  all: unset;
+
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-light-100);
+}
