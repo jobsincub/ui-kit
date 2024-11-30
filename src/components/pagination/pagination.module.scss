@@ -55,14 +55,10 @@
   @include item;
 }
 
-.button_previous,
-.button_next {
+.button {
   all: unset;
 
   cursor: pointer;
-  width: 16px;
-  height: 16px;
-  margin: 4px 0;
 
   background-repeat: no-repeat;
   background-position: center;
@@ -74,24 +70,9 @@
     opacity: 0.3;
   }
 }
-.button_previous {
-  background-image: url('Left.svg');
-}
-
-.button_next {
-  background-image: url('Right.svg');
-}
 
 .selectBox {
   display: flex;
   gap: 7px;
   align-items: center;
-
-  color: var(--color-light-100);
-}
-
-.select {
-  background-color: var(--color-dark-500);
-  border-radius: 2px;
-  border-color: var(--color-dark-300);
 }
