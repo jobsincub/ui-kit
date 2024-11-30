@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date {
+  line-height: 1;
+}
+
+.data_wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: inherit;
+}
+
+.error {
+  color: var(--color-danger-500);
+}
+
+.disabled {
+  color: var(--color-light-900);
+}
