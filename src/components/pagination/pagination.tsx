@@ -1,24 +1,24 @@
-import { ChangeEvent } from 'react'
-
 import { clsx } from 'clsx'
 
 import s from './pagination.module.scss'
 
+import { ArrowLeft, ArrowRight } from '../../assets/icons'
+import { Select } from '../select'
+import { Typography } from '../typography'
 import { usePagination } from './usePagination'
 
 export type PaginationProps = {
   currentPage: number
   onChange: (pageNumber: number) => void
-  onPerPageChange: (itemPerPage: number) => void
+  onPerPageChange: (itemPerPage: string) => void
   pageAmount: number
-  perPage: number
-  perPageOptions: number[]
+  perPage: string
+  perPageOptions: string[]
   siblings?: number
 }
 
 const classNames = {
-  button_next: s.button_next,
-  button_previous: s.button_previous,
+  button: s.button,
   container: s.container,
   dots: s.dots,
   icon: s.icon,
@@ -102,23 +102,17 @@ const PageButton = ({ currentPage, disabled, onClick, selected }: PageButtonProp
 }
 const PrevButton = ({ disabled, onClick }: NavigationButtonProps) => {
   return (
-    <button
-      className={classNames.button_previous}
-      disabled={disabled}
-      onClick={onClick}
-      type={'button'}
-    />
+    <button className={classNames.button} disabled={disabled} onClick={onClick} type={'button'}>
+      <ArrowLeft />
+    </button>
   )
 }
 
 const NextButton = ({ disabled, onClick }: NavigationButtonProps) => {
   return (
-    <button
-      className={classNames.button_next}
-      disabled={disabled}
-      onClick={onClick}
-      type={'button'}
-    />
+    <button className={classNames.button} disabled={disabled} onClick={onClick} type={'button'}>
+      <ArrowRight />
+    </button>
   )
 }
 
@@ -150,29 +144,26 @@ const MainPaginationButton = ({
 }
 
 export type PerPageSelectProps = {
-  onPerPageChange: (itemPerPage: number) => void
-  perPage: number
-  perPageOptions: number[]
+  onPerPageChange: (itemPerPage: string) => void
+  perPage: string
+  perPageOptions: string[]
 }
 
 export const PerPageSelect = ({ onPerPageChange, perPage, perPageOptions }: PerPageSelectProps) => {
-  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const selectedValue = parseInt(event.target.value, 10)
-
-    onPerPageChange(selectedValue)
-  }
+  const selectOptions = perPageOptions.map(value => ({
+    name: value,
+    value,
+  }))
 
   return (
     <div className={classNames.selectBox}>
-      <span>Show</span>
-      <select className={classNames.select} onChange={handleChange} value={perPage}>
-        {perPageOptions.map(value => (
-          <option key={value} value={value}>
-            {value}
-          </option>
-        ))}
-      </select>
-      <span>on page</span>
+      <Typography as={'span'} color={'light'} variant={'regular14'}>
+        Show
+      </Typography>
+      <Select onValueChange={onPerPageChange} options={selectOptions} pagination value={perPage} />
+      <Typography as={'span'} color={'light'} variant={'regular14'}>
+        on page
+      </Typography>
     </div>
   )
 }
