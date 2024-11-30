@@ -1,9 +1,4 @@
-import React, {
-  ComponentPropsWithRef,
-  ComponentPropsWithoutRef,
-  ElementType,
-  ReactNode,
-} from 'react'
+import { ComponentPropsWithoutRef, ElementType, ReactNode } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -34,26 +29,23 @@ export type TypographyProps<T extends ElementType = 'span'> = {
   variant?: Variant
 } & ComponentPropsWithoutRef<T>
 
-export const Typography = React.forwardRef(
-  <T extends ElementType = 'span'>(
-    props: TypographyProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof TypographyProps<T>>,
-    ref?: ComponentPropsWithRef<T>['ref']
-  ) => {
-    const {
-      as: Component = 'span',
-      children,
-      className,
-      color,
-      variant = 'regular14',
-      ...rest
-    } = props
+export const Typography = <T extends ElementType = 'span'>(
+  props: TypographyProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof TypographyProps<T>>
+) => {
+  const {
+    as: Component = 'span',
+    children,
+    className,
+    color,
+    variant = 'regular14',
+    ...rest
+  } = props
 
-    const classNames = clsx(s[variant], color && s[color], className)
+  const classNames = clsx(s[variant], color && s[color], className)
 
-    return (
-      <Component className={classNames} ref={ref} {...rest}>
-        {children}
-      </Component>
-    )
-  }
-)
+  return (
+    <Component className={classNames} {...rest}>
+      {children}
+    </Component>
+  )
+}
