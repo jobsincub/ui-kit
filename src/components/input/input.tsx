@@ -46,8 +46,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
             {isPasswordVisible ? <EyeIcon /> : <EyeOffIcon />}
           </button>
         )}
+        {error && <span className={s.errorText}>{error}</span>}
       </div>
-      {error && <span className={s.errorText}>{error}</span>}
     </div>
   )
 })

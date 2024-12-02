@@ -68,6 +68,10 @@
 }
 
 .errorText {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
   font-size: var(--font-size-s);
   line-height: var(--line-height-m);
   color: var(--color-danger-500);
