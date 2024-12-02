@@ -1,7 +1,7 @@
 {
   "name": "@wandrehappen/ui-kit",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.8",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -29,9 +29,9 @@
     "@radix-ui/react-tabs": "^1.1.1",
     "clsx": "^2.0.0",
     "date-fns": "^4.1.0",
-    "react": "^18.2.0",
-    "react-day-picker": "^9.3.1",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-day-picker": "^9.4.0",
+    "react-dom": "^18.3.1",
     "react-google-recaptcha": "^3.1.0"
   },
   "devDependencies": {
