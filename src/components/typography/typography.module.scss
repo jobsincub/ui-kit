@@ -1,6 +1,5 @@
 %typography {
   line-height: var(--line-height-m);
-  color: var(--color-dark-900);
 }
 
 %font-regular {
@@ -106,26 +105,122 @@
 }
 
 /* Специфичные классы для цветов */
-.accent {
+.color-primary-100 {
+  color: var(--color-primary-100);
+}
+
+.color-primary-300 {
+  color: var(--color-primary-300);
+}
+
+.color-primary-500 {
   color: var(--color-primary-500);
 }
 
-.success {
+.color-primary-700 {
+  color: var(--color-primary-700);
+}
+
+.color-primary-900 {
+  color: var(--color-primary-900);
+}
+
+.color-success-100 {
+  color: var(--color-success-100);
+}
+
+.color-success-300 {
+  color: var(--color-success-300);
+}
+
+.color-success-500 {
   color: var(--color-success-500);
 }
 
-.danger {
+.color-success-700 {
+  color: var(--color-success-700);
+}
+
+.color-success-900 {
+  color: var(--color-success-900);
+}
+
+.color-danger-100 {
+  color: var(--color-danger-100);
+}
+
+.color-danger-300 {
+  color: var(--color-danger-300);
+}
+
+.color-danger-500 {
   color: var(--color-danger-500);
 }
 
-.warning {
+.color-danger-700 {
+  color: var(--color-danger-700);
+}
+
+.color-danger-900 {
+  color: var(--color-danger-900);
+}
+
+.color-warning-100 {
+  color: var(--color-warning-100);
+}
+
+.color-warning-300 {
+  color: var(--color-warning-300);
+}
+
+.color-warning-500 {
   color: var(--color-warning-500);
 }
 
-.dark {
+.color-warning-700 {
+  color: var(--color-warning-700);
+}
+
+.color-warning-900 {
+  color: var(--color-warning-900);
+}
+
+.color-dark-100 {
+  color: var(--color-dark-100);
+}
+
+.color-dark-300 {
+  color: var(--color-dark-300);
+}
+
+.color-dark-500 {
   color: var(--color-dark-500);
 }
 
-.light {
+.color-dark-700 {
+  color: var(--color-dark-700);
+}
+
+.color-dark-900 {
+  color: var(--color-dark-900);
+}
+
+.color-light-100 {
+  color: var(--color-light-100);
+}
+
+.color-light-300 {
+  color: var(--color-light-300);
+}
+
+.color-light-500 {
   color: var(--color-light-500);
+}
+
+.color-light-700 {
+  color: var(--color-light-700);
+}
+
+.color-light-900 {
+  color: var(--color-light-900);
 }
