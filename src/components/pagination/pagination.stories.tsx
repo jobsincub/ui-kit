@@ -3,11 +3,12 @@ import { useState } from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 
 import { Pagination } from './pagination'
-const meta = {
+
+const meta: Meta<typeof Pagination> = {
   component: Pagination,
   tags: ['autodocs'],
   title: 'Components/Pagination',
-} as Meta<typeof Pagination>
+}
 
 export default meta
 type Story = StoryObj<typeof meta>
