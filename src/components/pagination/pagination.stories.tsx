@@ -15,13 +15,13 @@ type Story = StoryObj<typeof meta>
 const Template: Story = {
   render: args => {
     const [page, setPage] = useState<number>(args.currentPage || 1)
-    const [perPage, setPerPage] = useState<number>(args.perPage || 10)
+    const [perPage, setPerPage] = useState<string>('10')
     const totalPages = args.pageAmount || 55
     const handlePageChange = (page: number) => {
       setPage(page)
     }
 
-    const handlePerPageChange = (perPage: number) => {
+    const handlePerPageChange = (perPage: string) => {
       setPerPage(perPage)
       setPage(1)
     }
@@ -42,7 +42,7 @@ const Template: Story = {
 export const Default: Story = {
   args: {
     ...Template.args,
-    perPageOptions: [10, 20, 30, 50, 100],
+    perPageOptions: ['10', '20', '30', '50', '100'],
   },
   render: Template.render,
 }
@@ -51,7 +51,7 @@ export const Middle: Story = {
   args: {
     ...Template.args,
     currentPage: 7,
-    perPageOptions: [10, 20, 30, 50, 100],
+    perPageOptions: ['10', '20', '30', '50', '100'],
   },
   render: Template.render,
 }
