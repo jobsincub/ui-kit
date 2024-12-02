@@ -44,3 +44,5 @@ export type Color =
   | 'warning-500'
   | 'warning-700'
   | 'warning-900'
+
+export type Align = 'center' | 'end' | 'inherit' | 'justify' | 'start'
