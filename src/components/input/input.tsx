@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { MouseEvent, useState } from 'react'
 
 import { clsx } from 'clsx'
 
@@ -20,7 +20,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
   const isPasswordType = type === 'password'
   const [isPasswordVisible, setIsPasswordVisible] = useState(false)
 
-  const togglePasswordVisibility = () => {
+  const togglePasswordVisibilityHandler = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
     setIsPasswordVisible(prev => !prev)
   }
 
@@ -42,7 +43,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
           {...rest}
         />
         {isPasswordType && (
-          <button className={s.eyeButton} onClick={togglePasswordVisibility}>
+          <button className={s.eyeButton} onClick={togglePasswordVisibilityHandler}>
             {isPasswordVisible ? <EyeIcon /> : <EyeOffIcon />}
           </button>
         )}
