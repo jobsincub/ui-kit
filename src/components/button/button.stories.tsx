@@ -59,11 +59,12 @@ export const FullWidth: Story = {
 
 export const AsLink: Story = {
   args: {
-    as: 'a',
-    children: 'Link that looks like a button',
-    href: 'https://google.com',
-    rel: 'noopener noreferrer',
-    target: '_blank',
+    asChild: true,
+    children: (
+      <a href={'https://google.com/'} rel={'noopener noreferrer'} target={'_blank'}>
+        Links look like a button
+      </a>
+    ),
     variant: 'primary',
   },
 }
