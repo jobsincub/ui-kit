@@ -117,6 +117,15 @@
   color: var(--color-primary-900);
 }
 
+.linkAsBtn {
+  @extend .button;
+  @extend .primary;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+
 .icon {
   width: 115px;
   height: 36px;

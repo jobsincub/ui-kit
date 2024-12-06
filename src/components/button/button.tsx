@@ -5,7 +5,14 @@ import { clsx } from 'clsx'
 
 import s from './button.module.scss'
 
-export const buttonVariant = ['icon', 'link', 'primary', 'secondary', 'tertiary'] as const
+export const buttonVariant = [
+  'icon',
+  'link',
+  'primary',
+  'secondary',
+  'tertiary',
+  'linkAsBtn',
+] as const
 
 export type ButtonVariant = (typeof buttonVariant)[number]
 
