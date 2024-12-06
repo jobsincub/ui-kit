@@ -7,7 +7,7 @@ const meta = {
     onClick: { action: 'clicked' },
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'tertiary', 'link', 'icon'],
+      options: ['primary', 'secondary', 'tertiary', 'link', 'icon', 'linkAsBtn'],
     },
   },
   component: Button,
@@ -65,7 +65,7 @@ export const AsLink: Story = {
         Links look like a button
       </a>
     ),
-    variant: 'primary',
+    variant: 'linkAsBtn',
   },
 }
 
