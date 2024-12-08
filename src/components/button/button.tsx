@@ -19,6 +19,7 @@ export type ButtonVariant = (typeof buttonVariant)[number]
 type Props = {
   asChild?: boolean
   fullWidth?: boolean
+  gap?: number
   icon?: string
   variant?: ButtonVariant
 } & ComponentPropsWithoutRef<'button'>
@@ -29,6 +30,14 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
 
     const Comp = asChild ? Slot : 'button'
 
-    return <Comp className={classNames} data-icon={icon} ref={ref} {...rest}></Comp>
+    return (
+      <Comp
+        className={classNames}
+        data-icon={icon}
+        ref={ref}
+        {...rest}
+        style={{ gap: rest.gap ?? '12px' }}
+      ></Comp>
+    )
   }
 )

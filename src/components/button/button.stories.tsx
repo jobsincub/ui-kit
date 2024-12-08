@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import UkFlag from '../../assets/icons/components/fill/home'
 import { Button } from './'
 
 const meta = {
@@ -65,15 +66,22 @@ export const AsLink: Story = {
         Links look like a button
       </a>
     ),
-    variant: 'linkAsBtn',
+    variant: 'primary',
   },
 }
 
 export const Icon: Story = {
   args: {
-    children: 'English',
+    asChild: true,
+    children: (
+      <a href={'https://google.com/'} rel={'noopener noreferrer'} target={'_blank'}>
+        <UkFlag />
+        {'English'}
+      </a>
+    ),
     disabled: false,
-    icon: '🇺🇸',
-    variant: 'icon',
+    gap: 16,
+    // icon: <UkFlag />,
+    variant: 'link',
   },
 }
