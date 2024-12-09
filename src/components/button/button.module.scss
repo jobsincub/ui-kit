@@ -4,9 +4,10 @@
   cursor: pointer;
 
   box-sizing: border-box;
-  width: 180px;
-  height: 35px;
-  text-align: center;
+  padding: 6px 36px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
   &:focus-visible {
     outline: 2px solid lightcoral;
@@ -21,120 +22,102 @@
 .primary {
   color: var(--color-light-100);
   background-color: var(--color-primary-500);
+
+  &:active {
+    color: var(--color-light-500);
+    background-color: var(--color-primary-700);
+  }
+
+  &:hover {
+    color: var(--color-light-100);
+    background-color: var(--color-primary-100);
+    transition: 0.2s ease-in-out;
+  }
+
+  &:focus {
+    border: 2px solid var(--color-primary-700);
+
+  }
+
+  &:disabled {
+    color: var(--color-light-900);
+    background-color: var(--color-primary-900);
+  }
+
 }
 
-.primary:active {
-  color: var(--color-light-500);
-  background-color: var(--color-primary-700);
-}
-
-.primary:hover {
-  color: var(--color-light-100);
-  background-color: var(--color-primary-100);
-  transition: 0.2s ease-in-out;
-}
-
-.primary:focus {
-  border: 2px solid var(--color-primary-700);
-}
-
-.primary:disabled {
-  color: var(--color-light-900);
-  background-color: var(--color-primary-900);
-}
 
 .secondary {
   color: var(--color-light-100);
   background-color: var(--color-dark-300);
+
+  &:active {
+    color: var(--color-light-100);
+    background-color: var(--color-dark-500);
+  }
+
+  &:hover {
+    color: var(--color-light-100);
+    background-color: var(--color-dark-100);
+  }
+
+  &:focus {
+    border: 2px solid var(--color-primary-300);
+  }
+
+  &:disabled {
+    color: var(--color-light-900);
+    background-color: var(--color-dark-500);
+  }
 }
 
-.secondary:active {
-  color: var(--color-light-100);
-  background-color: var(--color-dark-500);
-}
-
-.secondary:hover {
-  color: var(--color-light-100);
-  background-color: var(--color-dark-100);
-}
-
-.secondary:focus {
-  border: 2px solid var(--color-primary-300);
-}
-
-.secondary:disabled {
-  color: var(--color-light-900);
-  background-color: var(--color-dark-500);
-}
 
 .tertiary {
   color: var(--color-primary-500);
   border: 1px solid var(--color-primary-500);
-}
 
-.tertiary:active {
-  color: var(--color-primary-700);
-  border: 1px solid var(--color-primary-700);
-}
+  &:active {
+    color: var(--color-primary-700);
+    border: 1px solid var(--color-primary-700);
+  }
 
-.tertiary:hover {
-  color: var(--color-primary-100);
-  border: 1px solid var(--color-primary-100);
-}
+  &:hover {
+    color: var(--color-primary-100);
+    border: 1px solid var(--color-primary-100);
+  }
 
-.tertiary:focus {
-  color: var(--color-primary-700);
-  border: 2px solid var(--color-primary-700);
-}
+  &:focus {
+    color: var(--color-primary-700);
+    border: 2px solid var(--color-primary-700);
+  }
 
-.tertiary:disabled {
-  color: var(--color-primary-900);
-  border: 1px solid var(--color-primary-900);
+  &:disabled {
+    color: var(--color-primary-900);
+    border: 1px solid var(--color-primary-900);
+  }
 }
 
 .link {
-  width: 100px;
-  height: 36px;
   color: var(--color-primary-500);
   text-decoration: none;
-}
+  padding:0;
 
-.link:active {
-  color: var(--color-primary-700);
-}
+  &:active {
+    color: var(--color-primary-700);
+  }
 
-.link:hover {
-  color: var(--color-primary-100);
-}
+  &:hover {
+    color: var(--color-primary-100);
+  }
 
-.link:focus {
-  color: var(--color-primary-500);
-  border: 2px solid var(--color-primary-700);
-  border-radius: 2px;
-}
+  &:focus {
+    color: var(--color-primary-500);
+    border: 2px solid var(--color-primary-700);
+    border-radius: 2px;
+  }
 
-.link:disabled {
-  color: var(--color-primary-900);
-}
+  &:disabled {
+    color: var(--color-primary-900);
 
-.linkAsBtn {
-  @extend .button;
-  @extend .primary;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 2px;
-}
-
-.icon {
-  width: 115px;
-  height: 36px;
-  background-color: var(--color-dark-300);
-  border-radius: 2px;
-}
-
-.icon::before {
-  content: attr(data-icon); /* Unicode символ для иконки */
-  margin-right: 8px; /* Отступ между иконкой и текстом */
-  font-size: 1.2em; /* Размер иконки */
+  }
 }
