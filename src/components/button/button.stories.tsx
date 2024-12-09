@@ -8,7 +8,7 @@ const meta = {
     onClick: { action: 'clicked' },
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary', 'tertiary', 'link', 'icon', 'linkAsBtn'],
+      options: ['primary', 'secondary', 'tertiary', 'link', 'icon'],
     },
   },
   component: Button,
