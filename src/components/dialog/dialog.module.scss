@@ -4,7 +4,21 @@
 
 .closeIcon {}
 
-.srOnly {}
+.srOnly {
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+}
 
 .header {
   padding: 12px 24px 11px;
