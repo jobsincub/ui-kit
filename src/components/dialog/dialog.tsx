@@ -37,23 +37,41 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ children, className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
-    <DialogPrimitive.Content className={clsx(s.content, className)} ref={ref} {...props}>
-      {children}
-      <DialogPrimitive.Close className={s.close}>
-        <CloseIcon className={s.closeIcon} />
-        <span className={s.srOnly}>Close</span>
-      </DialogPrimitive.Close>
-    </DialogPrimitive.Content>
+    <DialogPrimitive.Content className={clsx(s.content, className)} ref={ref} {...props} />
   </DialogPortal>
 ))
 
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
-const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
-  <div className={clsx(s.header, className)} {...props} />
+const DialogCloseIcon = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Close>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Close>
+>(({ className, ...props }, ref) => (
+  <DialogPrimitive.Close className={clsx(s.close, className)} ref={ref} {...props}>
+    <CloseIcon className={s.closeIcon} />
+    <span className={s.srOnly}>Close</span>
+  </DialogPrimitive.Close>
+))
+
+DialogCloseIcon.displayName = 'DialogCloseIcon'
+
+type DialogHeaderProps = React.HTMLAttributes<HTMLDivElement> & {
+  isCloseIconVisible?: boolean
+}
+
+const DialogHeader = ({
+  children,
+  className,
+  isCloseIconVisible = true,
+  ...props
+}: DialogHeaderProps) => (
+  <div className={clsx(s.header, className)} {...props}>
+    {children}
+    {isCloseIconVisible && <DialogCloseIcon />}
+  </div>
 )
 
 DialogHeader.displayName = 'DialogHeader'
