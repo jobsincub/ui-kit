@@ -58,6 +58,12 @@ const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 
 DialogHeader.displayName = 'DialogHeader'
 
+const DialogBody = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+  <div className={clsx(s.body, className)} {...props} />
+)
+
+DialogBody.displayName = 'DialogBody'
+
 const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div className={clsx(s.footer, className)} {...props} />
 )
