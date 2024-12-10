@@ -1,4 +1,17 @@
-.overlay {}
+.overlay {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  background-color: rgb(0 0 0 / 60%);
+
+  &[data-state='open'] {
+    animation: fadeIn 0.3s forwards;
+  }
+
+  &[data-state='closed'] {
+    animation: fadeOut 0.3s forwards;
+  }
+}
 
 .content {}
 
@@ -51,4 +64,25 @@
 .description {
   line-height: var(--line-height-m);
   color: var(--color-light-100);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
