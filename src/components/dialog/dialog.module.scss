@@ -12,7 +12,11 @@
   padding: 18px 24px 36px;
 }
 
-.footer {}
+.footer {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end;
+}
 
 .title {
   font-size: var(--font-size-xl);
