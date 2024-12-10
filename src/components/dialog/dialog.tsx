@@ -9,7 +9,12 @@ import CloseIcon from '../../assets/icons/components/common/close'
 
 const Dialog = DialogPrimitive.Root
 
-const DialogTrigger = DialogPrimitive.Trigger
+const DialogTrigger = React.forwardRef<
+  React.ElementRef<typeof DialogPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof DialogPrimitive.Trigger>
+>(({ asChild = true, ...props }, ref) => (
+  <DialogPrimitive.Trigger asChild={asChild} ref={ref} {...props} />
+))
 
 const DialogPortal = DialogPrimitive.Portal
 
