@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { useState } from 'react'
+
 import { Button } from '../button'
 import {
   Dialog,
@@ -50,5 +52,40 @@ export const Default: Story = {
         </DialogContent>
       </>
     ),
+  },
+}
+
+const wait = () => new Promise(resolve => setTimeout(resolve, 1000))
+
+export const Controlled: Story = {
+  render: () => {
+    const [open, setOpen] = useState(false)
+
+    return (
+      <Dialog onOpenChange={setOpen} open={open}>
+        <DialogTrigger asChild>
+          <Button>Open</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Controlled modal with form</DialogTitle>
+          </DialogHeader>
+          <DialogBody>
+            <DialogDescription>This form closed after form submitting</DialogDescription>
+            <form
+              onSubmit={event => {
+                wait().then(() => setOpen(false))
+                event.preventDefault()
+              }}
+            >
+              {/** some inputs */}
+              <DialogFooter>
+                <Button type={'submit'}>Submit</Button>
+              </DialogFooter>
+            </form>
+          </DialogBody>
+        </DialogContent>
+      </Dialog>
+    )
   },
 }
