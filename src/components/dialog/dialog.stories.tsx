@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from '../button'
 import {
   Dialog,
+  DialogBody,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogFooter,
@@ -29,15 +31,22 @@ export const Default: Story = {
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Log Out</DialogTitle>
-            <DialogDescription>
-              Are you really want to log out of your account “Epam@epam.com”?
-            </DialogDescription>
+            <DialogTitle style={{ margin: 0 }}>Log Out</DialogTitle>
           </DialogHeader>
-          <DialogFooter>
-            <Button>Yes</Button>
-            <Button>No</Button>
-          </DialogFooter>
+          <DialogBody style={{ paddingTop: '30px' }}>
+            <DialogDescription style={{ margin: '0 0 30px' }}>
+              Are you really want to log out of your account{' '}
+              <span style={{ fontWeight: 700 }}>“Epam@epam.com”</span>?
+            </DialogDescription>
+            <DialogFooter>
+              <DialogClose>
+                <Button variant={'tertiary'}>Yes</Button>
+              </DialogClose>
+              <DialogClose>
+                <Button>No</Button>
+              </DialogClose>
+            </DialogFooter>
+          </DialogBody>
         </DialogContent>
       </>
     ),
