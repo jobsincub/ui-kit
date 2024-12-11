@@ -157,11 +157,11 @@ export const PerPageSelect = ({ onPerPageChange, perPage, perPageOptions }: PerP
 
   return (
     <div className={classNames.selectBox}>
-      <Typography as={'span'} color={'light'} variant={'regular14'}>
+      <Typography color={'light-100'} variant={'regular14'}>
         Show
       </Typography>
       <Select onValueChange={onPerPageChange} options={selectOptions} pagination value={perPage} />
-      <Typography as={'span'} color={'light'} variant={'regular14'}>
+      <Typography color={'light-100'} variant={'regular14'}>
         on page
       </Typography>
     </div>
