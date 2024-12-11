@@ -3,11 +3,12 @@
 
   cursor: pointer;
 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   box-sizing: border-box;
   padding: 6px 36px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
 
   &:focus-visible {
     outline: 2px solid lightcoral;
@@ -36,16 +37,13 @@
 
   &:focus {
     border: 2px solid var(--color-primary-700);
-
   }
 
   &:disabled {
     color: var(--color-light-900);
     background-color: var(--color-primary-900);
   }
-
 }
-
 
 .secondary {
   color: var(--color-light-100);
@@ -70,7 +68,6 @@
     background-color: var(--color-dark-500);
   }
 }
-
 
 .tertiary {
   color: var(--color-primary-500);
@@ -98,9 +95,9 @@
 }
 
 .link {
+  padding: 0;
   color: var(--color-primary-500);
   text-decoration: none;
-  padding:0;
 
   &:active {
     color: var(--color-primary-700);
@@ -118,6 +115,5 @@
 
   &:disabled {
     color: var(--color-primary-900);
-
   }
 }
