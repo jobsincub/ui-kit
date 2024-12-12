@@ -110,6 +110,7 @@ export {
   Dialog,
   DialogBody,
   DialogClose,
+  DialogCloseIcon,
   DialogContent,
   DialogDescription,
   DialogFooter,
