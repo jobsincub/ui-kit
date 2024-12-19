@@ -27,21 +27,17 @@
     padding-right: 36px;
   }
 
+  &[type="search"] {
+    padding-left: 41px;
+  }
+
   &:hover {
-    outline: 1px solid var(--color-light-900);
+    border-color: var(--color-light-900);
   }
 
   &:focus {
-    outline: 2px solid var(--color-primary-500);
-
-    &.inputError {
-      border: 1px solid var(--color-dark-100);
-    }
-  }
-
-  &:active {
     background-color: var(--color-dark-500);
-    outline: 1px solid var(--color-light-100);
+    border-color: var(--color-light-100);
 
     &::placeholder {
       color: transparent;
@@ -87,10 +83,6 @@
   height: 20px;
 
   color: var(--color-light-900);
-
-  & ~ .input {
-    padding-left: 41px;
-  }
 
   .disabled & {
     color: var(--color-dark-100);
