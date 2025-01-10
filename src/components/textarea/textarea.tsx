@@ -1,3 +1,5 @@
+import { ComponentPropsWithoutRef } from 'react'
+
 import s from './textarea.module.scss'
 
 type TextareaType = {
@@ -9,7 +11,7 @@ type TextareaType = {
   placeholder?: string
   value?: string
   variant?: string
-}
+} & ComponentPropsWithoutRef<'textarea'>
 
 export const Textarea = ({
   disabled,
