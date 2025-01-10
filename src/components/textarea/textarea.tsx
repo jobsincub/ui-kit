@@ -22,6 +22,7 @@ export const Textarea = ({
   placeholder,
   value,
   variant,
+  ...rest
 }: TextareaType) => {
   return (
     <div className={s.container}>
@@ -33,6 +34,7 @@ export const Textarea = ({
         onChange={e => onChange && onChange(e.target.value)}
         placeholder={placeholder}
         value={value}
+        {...rest}
       />
       {error ? <label className={s.errorText}> {errorText} </label> : ''}
     </div>
