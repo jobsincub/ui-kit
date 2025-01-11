@@ -46,3 +46,5 @@ export type Color =
   | 'warning-900'
 
 export type Align = 'center' | 'end' | 'inherit' | 'justify' | 'start'
+
+export type Weight = 'bold' | 'medium' | 'regular' | 'semi-bold'

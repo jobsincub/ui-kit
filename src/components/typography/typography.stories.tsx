@@ -89,3 +89,10 @@ export const WithRef: Story = {
     )
   },
 }
+
+export const BoldWeight: Story = {
+  args: {
+    children: 'Пример жирного текста',
+    weight: 'bold',
+  },
+}

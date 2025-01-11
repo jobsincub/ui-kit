@@ -1,4 +1,4 @@
-import type { Align, Color, Variant } from './types'
+import type { Align, Color, Variant, Weight } from './types'
 
 import { ComponentPropsWithoutRef, forwardRef } from 'react'
 
@@ -12,6 +12,7 @@ type Props = {
   asChild?: boolean
   color?: Color
   variant?: Variant
+  weight?: Weight
 } & ComponentPropsWithoutRef<'span'>
 
 export const Typography = forwardRef<HTMLSpanElement, Props>(
@@ -22,6 +23,7 @@ export const Typography = forwardRef<HTMLSpanElement, Props>(
       className,
       color = 'light-100',
       variant = 'regular14',
+      weight = 'regular',
       ...props
     },
     ref
@@ -34,6 +36,7 @@ export const Typography = forwardRef<HTMLSpanElement, Props>(
           s[variant],
           color && s[`color-${color}`],
           align && s[`text-align-${align}`],
+          weight && s[`font-weight-${weight}`],
           className
         )}
         ref={ref}
