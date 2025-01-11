@@ -140,6 +140,23 @@
   text-align: justify;
 }
 
+/* Специфичные классы для толщины текста */
+.font-weight-regular {
+  @extend %font-regular;
+}
+
+.font-weight-medium {
+  @extend %font-medium;
+}
+
+.font-weight-semi-bold {
+  @extend %font-semi-bold;
+}
+
+.font-weight-bold {
+  @extend %font-bold;
+}
+
 %typography {
   line-height: var(--line-height-m);
 }
