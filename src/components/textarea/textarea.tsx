@@ -16,18 +16,7 @@ type TextareaType = {
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaType>(
   (
-    {
-      className,
-      disabled,
-      error,
-      errorText,
-      labelText,
-      onChange,
-      placeholder,
-      value,
-      variant,
-      ...rest
-    },
+    { className, disabled, error, errorText, labelText, placeholder, value, variant, ...rest },
     ref
   ) => {
     const classNames = clsx(s.textarea, error && s.error, className)
