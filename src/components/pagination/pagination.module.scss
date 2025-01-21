@@ -4,8 +4,9 @@
   align-items: center;
   background-color: var(
     --color-dark-900
-  ); //стоит убрать, так как фон прозрачный, добавила для сторис
+  ); 
 }
+
 .container {
   display: flex;
   gap: 12px;
@@ -51,6 +52,7 @@
     outline: 2px solid var(--color-primary-700);
   }
 }
+
 .dots {
   @include item;
 }

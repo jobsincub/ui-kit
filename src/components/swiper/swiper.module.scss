@@ -1,0 +1,58 @@
+.swiperWrapper {
+  position: relative;
+}
+
+.arrow_right {
+  left: 10px;
+  background-image: url('Back.svg');
+}
+
+.arrow_left {
+  right: 10px;
+  background-image: url('Forward.svg');
+}
+
+.arrow_right,
+.arrow_left {
+  cursor: pointer;
+
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  opacity: 0.6;
+  background-color: var(--color-dark-300);
+  border: none;
+
+  &:hover {
+    background-color: var(--color-dark-100);
+  }
+}
+
+// .swiper-button-next,
+// .swiper-button-prev {
+//   color: brown;
+
+//   background-color: aquamarine;
+
+//   width: 48px;
+//   height: 48px;
+//   z-index: 10;
+// }
+
+// .swiper-button-next::after,
+// .swiper-button-prev::after {
+//   color: red;
+// }
+
+// :root{
+//   --swiper-navigation-color: red
+// }

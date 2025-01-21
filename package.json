@@ -33,7 +33,8 @@
     "react": "18.3.1",
     "react-day-picker": "9.4.0",
     "react-dom": "18.3.1",
-    "react-google-recaptcha": "3.1.0"
+    "react-google-recaptcha": "3.1.0",
+    "swiper": "^11.2.1"
   },
   "devDependencies": {
     "@it-incubator/eslint-config": "1.0.1",
