@@ -4,12 +4,12 @@ import clsx from 'clsx'
 
 import s from './recaptcha.module.scss'
 
-type Props = {
+type RecaptchaProps = {
   isError?: boolean
   language?: string
 } & ReCAPTCHAProps
 
-export const Recaptcha = ({ isError, language = 'en', onChange, sitekey }: Props) => {
+export const Recaptcha = ({ isError, language = 'en', onChange, sitekey }: RecaptchaProps) => {
   const verifyHandeler = (token: null | string) => {
     onChange?.(token)
   }
