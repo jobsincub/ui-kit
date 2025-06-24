@@ -8,10 +8,10 @@ type RecaptchaProps = ReCAPTCHAProps & {
   error?: string
 }
 
-export const Recaptcha = ({ error, ...rest }: RecaptchaProps) => {
+export const Recaptcha = ({ error, theme = 'dark', ...rest }: RecaptchaProps) => {
   return (
     <div className={clsx(error && s.errorBox)}>
-      <ReCAPTCHAComponent theme={'dark'} {...rest} />
+      <ReCAPTCHAComponent theme={theme} {...rest} />
       {error && <span className={s.error}>{error}</span>}
     </div>
   )
