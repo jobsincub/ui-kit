@@ -4,24 +4,18 @@ import clsx from 'clsx'
 
 import s from './recaptcha.module.scss'
 
-type RecaptchaProps = {
+type RecaptchaProps = ReCAPTCHAProps & {
   error?: string
-  language?: string
-} & ReCAPTCHAProps
+}
 
-export const Recaptcha = ({ error, language = 'en', onChange, sitekey }: RecaptchaProps) => {
+export const Recaptcha = ({ error, hl = 'en', onChange, sitekey }: RecaptchaProps) => {
   const verifyHandeler = (token: null | string) => {
     onChange?.(token)
   }
 
   return (
     <div className={clsx(error && s.errorBox)}>
-      <ReCAPTCHAComponent
-        hl={language}
-        onChange={verifyHandeler}
-        sitekey={sitekey}
-        theme={'dark'}
-      />
+      <ReCAPTCHAComponent hl={hl} onChange={verifyHandeler} sitekey={sitekey} theme={'dark'} />
       {error && <span className={s.error}>{error}</span>}
     </div>
   )
