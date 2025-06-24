@@ -19,7 +19,7 @@ export const Default: Story = {
 }
 export const RecaptchaWithError: Story = {
   args: {
-    isError: true,
+    error: 'Please verify that you are not a robot',
     onChange: token => console.log('Verified:', token),
     sitekey: '6LcrEYQqAAAAAH39ZWiTbCHde_Z_-83OBxIXB7l8', // тестовый ключ
   },
