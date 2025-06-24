@@ -1,11 +1,14 @@
 .errorBox {
-    box-sizing: content-box;
-    width: 300px;
-    padding: 8px;
-    outline: 1px solid #f00;
+  padding: 8px 7px 12px;
+  outline: 1px solid #f00;
+}
+
+.recaptcha {
+  &:not(:last-child) {
+    margin-bottom: 13px;
   }
-  
-  .error {
-    padding: 13px 0 5px;
-    color: #f00;
-  }
+}
+
+.error {
+  color: #f00;
+}
