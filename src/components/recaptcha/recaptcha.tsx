@@ -9,8 +9,6 @@ type Props = {
   language?: string
 } & ReCAPTCHAProps
 
-//onChange?: ((token: string | null) => void) | undefined;
-
 export const ReCaptcha = ({ isError, language = 'en', onChange, sitekey }: Props) => {
   const verifyHandeler = (token: null | string) => {
     onChange?.(token)
