@@ -8,14 +8,14 @@ type RecaptchaProps = ReCAPTCHAProps & {
   error?: string
 }
 
-export const Recaptcha = ({ error, hl = 'en', onChange, sitekey }: RecaptchaProps) => {
+export const Recaptcha = ({ error, onChange, sitekey, ...rest }: RecaptchaProps) => {
   const verifyHandeler = (token: null | string) => {
     onChange?.(token)
   }
 
   return (
     <div className={clsx(error && s.errorBox)}>
-      <ReCAPTCHAComponent hl={hl} onChange={verifyHandeler} sitekey={sitekey} theme={'dark'} />
+      <ReCAPTCHAComponent onChange={verifyHandeler} sitekey={sitekey} theme={'dark'} {...rest} />
       {error && <span className={s.error}>{error}</span>}
     </div>
   )
