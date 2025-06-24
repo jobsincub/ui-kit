@@ -1,15 +1,15 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { ReCaptcha } from './recaptcha'
+import { Recaptcha } from './recaptcha'
 
 const meta = {
-  component: ReCaptcha,
+  component: Recaptcha,
   tags: ['autodocs'],
   title: 'Components/Recaptcha',
-} satisfies Meta<typeof ReCaptcha>
+} satisfies Meta<typeof Recaptcha>
 
 export default meta
-type Story = StoryObj<typeof ReCaptcha>
+type Story = StoryObj<typeof Recaptcha>
 
 export const Default: Story = {
   args: {

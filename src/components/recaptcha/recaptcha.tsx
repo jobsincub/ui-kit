@@ -9,7 +9,7 @@ type Props = {
   language?: string
 } & ReCAPTCHAProps
 
-export const ReCaptcha = ({ isError, language = 'en', onChange, sitekey }: Props) => {
+export const Recaptcha = ({ isError, language = 'en', onChange, sitekey }: Props) => {
   const verifyHandeler = (token: null | string) => {
     onChange?.(token)
   }
