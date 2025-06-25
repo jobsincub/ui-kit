@@ -1,5 +1,5 @@
 import React from 'react'
-import ReCAPTCHAComponent, { ReCAPTCHAProps } from 'react-google-recaptcha'
+import ReCAPTCHAComponent, { ReCAPTCHA, ReCAPTCHAProps } from 'react-google-recaptcha'
 
 import clsx from 'clsx'
 
@@ -20,3 +20,5 @@ export const Recaptcha = React.forwardRef<ReCAPTCHAComponent, RecaptchaProps>((p
     </div>
   )
 })
+
+export { ReCAPTCHA }
