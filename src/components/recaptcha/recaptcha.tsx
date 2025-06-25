@@ -1,3 +1,4 @@
+import React from 'react'
 import ReCAPTCHAComponent, { ReCAPTCHAProps } from 'react-google-recaptcha'
 
 import clsx from 'clsx'
@@ -8,13 +9,14 @@ type RecaptchaProps = ReCAPTCHAProps & {
   error?: string
 }
 
-export const Recaptcha = ({ className, error, theme = 'dark', ...rest }: RecaptchaProps) => {
+export const Recaptcha = React.forwardRef<ReCAPTCHAComponent, RecaptchaProps>((props, ref) => {
+  const { className, error, theme = 'dark', ...rest } = props
   const classNames = clsx(s.recaptcha, className)
 
   return (
     <div className={clsx(error && s.errorBox)}>
-      <ReCAPTCHAComponent className={classNames} theme={theme} {...rest} />
+      <ReCAPTCHAComponent className={classNames} ref={ref} theme={theme} {...rest} />
       {error && <span className={s.error}>{error}</span>}
     </div>
   )
-}
+})
