@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 import s from './recaptcha.module.scss'
 
-type RecaptchaProps = ReCAPTCHAProps & {
+export type RecaptchaProps = ReCAPTCHAProps & {
   error?: string
 }
 
